@@ -16,6 +16,8 @@ const pillarIcons = {
 };
 
 export default function HomePage() {
+  const siteUrl = import.meta.env.VITE_SITE_URL || (typeof window !== 'undefined' ? window.location.origin : '');
+
   return (
     <>
       <Helmet>
@@ -30,6 +32,21 @@ export default function HomePage() {
         description="Infrastructure • Cloud • Security • Automation. IT and Systems Engineer based in Nairobi, Kenya."
         image={profile.portraitUrl}
         siteName="Simon Lukalo"
+        author={profile.name}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: profile.name,
+          jobTitle: profile.role,
+          url: siteUrl || undefined,
+          image: profile.portraitUrl,
+          sameAs: [profile.linkedin, profile.github],
+          address: {
+            '@type': 'PostalAddress',
+            addressLocality: 'Nairobi',
+            addressCountry: 'KE',
+          },
+        }}
       />
 
       {/* Hero */}
