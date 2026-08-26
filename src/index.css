@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222 47% 7%;
+    --foreground: 210 30% 94%;
+    --card: 222 40% 10%;
+    --card-foreground: 210 30% 94%;
+    --popover: 222 44% 9%;
+    --popover-foreground: 210 30% 94%;
+    --primary: 190 92% 52%;
+    --primary-foreground: 222 60% 8%;
+    --secondary: 218 32% 16%;
+    --secondary-foreground: 210 30% 94%;
+    --muted: 218 28% 14%;
+    --muted-foreground: 214 16% 62%;
+    --accent: 214 90% 60%;
+    --accent-foreground: 222 60% 8%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 217 28% 19%;
+    --input: 217 28% 19%;
+    --ring: 190 92% 52%;
+    --radius: 0.35rem;
+    --sidebar-background: 222 40% 10%;
+    --sidebar-foreground: 210 30% 94%;
+    --sidebar-primary: 190 92% 52%;
+    --sidebar-primary-foreground: 222 60% 8%;
+    --sidebar-accent: 218 32% 16%;
+    --sidebar-accent-foreground: 210 30% 94%;
+    --sidebar-border: 217 28% 19%;
+    --sidebar-ring: 190 92% 52%;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .font-display {
+    font-family: "Space Grotesk", system-ui, sans-serif;
+  }
+  .font-mono-tech {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+  }
+  .grid-lines {
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .rule-label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: hsl(var(--primary));
+  }
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee-x 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee { animation: none; }
+  html { scroll-behavior: auto; }
+}
