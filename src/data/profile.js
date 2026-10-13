@@ -11,7 +11,7 @@ export const profile = {
   github: 'https://github.com/simonlukalo',
   heroStatement:
     'I build, support and improve technology environments across systems, networks, endpoints and security — with a growing focus on cloud infrastructure, automation and modern IT operations.',
-  portraitUrl: assetUrl('images/portrait.jpg'),
+  portraitUrl: assetUrl('images/profile.jpg'),
   casualPortraitUrl: assetUrl('images/portrait-casual.jpg'),
   infraUrl: assetUrl('images/infrastructure.png'),
 };
@@ -475,3 +475,4 @@ export const learning = {
     },
   ],
 };
+
