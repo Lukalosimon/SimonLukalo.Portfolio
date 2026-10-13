@@ -23,6 +23,16 @@ const Seo = ({ title, description, image, url, siteName, type = 'website', jsonL
         return baseUrl;
     })();
 
+    // Social crawlers require an absolute URL for preview images.
+    const absoluteImage = (() => {
+        if (!image) return undefined;
+        try {
+            return new URL(image, baseUrl || 'https://simonlukalo.github.io').href;
+        } catch {
+            return image;
+        }
+    })();
+
     return (
         <Helmet>
             <meta name="robots" content="index,follow" />
@@ -34,12 +44,12 @@ const Seo = ({ title, description, image, url, siteName, type = 'website', jsonL
             {siteName && <meta property="og:site_name" content={siteName} />}
             {title && <meta property="og:title" content={title} />}
             {description && <meta property="og:description" content={description} />}
-            {image && <meta property="og:image" content={image} />}
+            {absoluteImage && <meta property="og:image" content={absoluteImage} />}
             {image && <meta property="og:image:alt" content={title || siteName || 'Open Graph image'} />}
             <meta name="twitter:card" content={image ? 'summary_large_image' : 'summary'} />
             {title && <meta name="twitter:title" content={title} />}
             {description && <meta name="twitter:description" content={description} />}
-            {image && <meta name="twitter:image" content={image} />}
+            {absoluteImage && <meta name="twitter:image" content={absoluteImage} />}
             {jsonLd && <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>}
         </Helmet>
     );

@@ -1,3 +1,5 @@
+import { assetUrl } from '@/lib/assets';
+
 export const profile = {
   name: 'Simon Lukalo',
   role: 'IT & Systems Engineer',
@@ -9,9 +11,9 @@ export const profile = {
   github: 'https://github.com/simonlukalo',
   heroStatement:
     'I build, support and improve technology environments across systems, networks, endpoints and security — with a growing focus on cloud infrastructure, automation and modern IT operations.',
-  portraitUrl: 'https://horizons-cdn.hostinger.com/0077986e-7990-4696-b03b-f37e978e756a/ead28e41ed707adda4cc3a18bb05f436.jpg',
-  casualPortraitUrl: 'https://horizons-cdn.hostinger.com/0077986e-7990-4696-b03b-f37e978e756a/af6b01f4409ef81e76a3875fcc9ea5c4.jpg',
-  infraUrl: 'https://images.hostinger.com/04d7d6fd-6f52-42b3-a3a7-c0db3d858441.png',
+  portraitUrl: assetUrl('images/portrait.jpg'),
+  casualPortraitUrl: assetUrl('images/portrait-casual.jpg'),
+  infraUrl: assetUrl('images/infrastructure.png'),
 };
 
 export const techStrip = [

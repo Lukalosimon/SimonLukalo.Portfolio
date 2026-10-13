@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { Menu, X, Mail, Linkedin, Github, MapPin } from 'lucide-react';
+import SmartImage from '@/components/SmartImage';
 import { profile } from '@/data/profile';
 
 const nav = [
@@ -49,10 +50,10 @@ export default function SiteLayout({ children }) {
       <header className="sticky top-0 z-40 border-b border-border/70 bg-background/85 backdrop-blur-md">
         <div className="mx-auto flex h-16 w-full max-w-[80rem] items-center justify-between px-5 sm:px-8">
           <Link to="/" className="group flex items-center gap-3">
-            <img
+            <SmartImage
               src={profile.portraitUrl}
               alt="Simon Lukalo"
-              className="h-9 w-9 rounded-full border border-primary/50 object-cover object-top grayscale-[10%]"
+              className="h-9 w-9 shrink-0 rounded-full border border-primary/50 object-cover object-top grayscale-[10%]"
             />
             <span className="hidden text-sm font-medium tracking-tight sm:block font-display">
               {profile.name}

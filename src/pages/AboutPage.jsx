@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Server, Network, Cloud, ShieldCheck, Terminal, GitBranch } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
+import SmartImage from '@/components/SmartImage';
 import { profile, aboutParagraphs, pillars, principles } from '@/data/profile';
 
 const pillarIcons = {
@@ -43,11 +44,11 @@ export default function AboutPage() {
 
         <Reveal delay={0.1}>
           <div className="space-y-8">
-            <img
+            <SmartImage
               src={profile.casualPortraitUrl}
               alt="Simon Lukalo in his office workspace"
               loading="lazy"
-              className="w-full object-cover grayscale-[15%]"
+              className="aspect-[4/5] w-full object-cover object-top grayscale-[15%]"
             />
             <div className="border border-border p-6">
               <p className="rule-label">Positioning</p>

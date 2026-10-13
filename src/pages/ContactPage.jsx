@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Mail, Linkedin, Github, MapPin, Phone } from 'lucide-react';
 import PageHeader from '@/components/PageHeader';
 import Reveal from '@/components/Reveal';
+import SmartImage from '@/components/SmartImage';
 import { profile } from '@/data/profile';
 
 export default function ContactPage() {
@@ -61,7 +62,7 @@ export default function ContactPage() {
         <Reveal delay={0.1}>
           <div className="space-y-6 text-sm leading-relaxed text-muted-foreground">
             <div className="flex items-center gap-5 border border-border bg-card/30 p-5">
-              <img
+              <SmartImage
                 src={profile.portraitUrl}
                 alt="Formal professional headshot of Simon Lukalo"
                 className="h-24 w-20 shrink-0 object-cover object-top grayscale-[10%]"

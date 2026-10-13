@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight, ArrowRight, Server, Network, Cloud, ShieldCheck, Terminal, GitBranch } from 'lucide-react';
 import Reveal from '@/components/Reveal';
 import Seo from '@/components/Seo';
+import SmartImage from '@/components/SmartImage';
 import { profile, techStrip, pillars, principles, projects, learning, infraDevops } from '@/data/profile';
 
 const pillarIcons = {
@@ -98,11 +99,11 @@ export default function HomePage() {
           <Reveal delay={0.2} y={32}>
             <div className="relative mx-auto w-full max-w-sm lg:max-w-none">
               <div className="absolute -right-3 -top-3 h-full w-full border border-primary/30" aria-hidden="true" />
-              <img
+              <SmartImage
                 src={profile.portraitUrl}
                 alt="Simon Lukalo, IT and systems engineer, in a Nairobi office"
                 loading="eager"
-                className="relative w-full object-cover grayscale-[15%]"
+                className="relative aspect-[4/5] w-full object-cover object-top grayscale-[15%]"
               />
               <div className="relative -mt-px border border-border bg-card px-5 py-4 font-mono-tech text-xs text-muted-foreground">
                 <span className="text-primary">focus:</span> infrastructure • cloud • security • automation
@@ -221,7 +222,12 @@ export default function HomePage() {
 
       {/* Principles + learning band */}
       <section className="relative overflow-hidden border-y border-border">
-        <img src={profile.infraUrl} alt="" aria-hidden="true" className="absolute inset-0 h-full w-full object-cover opacity-20" />
+        <SmartImage
+          src={profile.infraUrl}
+          alt=""
+          aria-hidden="true"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
+        />
         <div className="absolute inset-0 bg-background/80" />
         <div className="relative mx-auto grid w-full max-w-[72rem] gap-12 px-5 py-24 sm:px-8 lg:grid-cols-2">
           <Reveal>

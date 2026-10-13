@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<rect width="64" height="64" rx="10" fill="#090e1a"/>
+	<rect x="1.25" y="1.25" width="61.5" height="61.5" rx="9" fill="none" stroke="#14d0f5" stroke-opacity="0.55" stroke-width="2.5"/>
+	<g stroke="#1f2a3c" stroke-width="1">
+		<path d="M0 21.3h64M0 42.6h64M21.3 0v64M42.6 0v64"/>
+	</g>
+	<text x="32" y="42" text-anchor="middle" font-family="'JetBrains Mono',ui-monospace,monospace" font-size="26" font-weight="600" letter-spacing="1" fill="#14d0f5">SL</text>
+</svg>
